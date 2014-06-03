@@ -1,0 +1,35 @@
+mysql-5.6.17-win32.zip
+	MySQL数据库5.6
+	安装过程
+	http://jingyan.baidu.com/article/f3ad7d0ffc061a09c3345bf0.html
+
+	数据库复制
+	将manage_1_0_db_dbname文件夹复制到安装目录的data文件夹中（如C:\Program Files\MySQL\mysql 5.6\data）
+
+NavicatMySQLFront.zip
+	MySQL可视化操作界面
+	点击左上角的“连接”，连接名随便填一个，主机名用默认的localhost（意为本地）
+	安装MySQL数据库时默认没有密码，用户名是root
+
+mysql-connector-odbc-5.2.6-win32.msi
+	MySQL数据库连接器
+	安装完成后
+	打开 控制面板-->管理工具-->数据源（ODBC）
+	点击“添加”，选中MySQL ODBC 5.6 Driver，确定
+	Data Source Name 填写manage_1_0_odbc
+	Database在下拉中选中manage_1_0_db_dbname
+	点击Test可知有没有连接成功
+
+组态王6.53.rar
+	组态王
+	双击组态王图表出来“工程管理器”，点左上角“文件”——“打开”，选择组态王的代码存放的地方
+	如C:\wsn_manage_1_0
+
+jre-7u51-windows-i586.exe
+	JAVA运行环境，打开网站时需要使用
+
+以上安装文件上传在
+http://pan.baidu.com/s/1ntnwoWh
+组态王代码上传在 
+https://github.com/hsylx1992/wsn_manage_1_0 
+下载链接在网站右下角“Download Zip”
