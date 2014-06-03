@@ -1,0 +1,19 @@
+[BINDLIST1]
+BINDNAME = kv_bind_node
+COLUMN1 = nodeid \\本站点\kv_node_id
+COLUMN2 = locationx \\本站点\kv_node_locationx
+COLUMN3 = locationy \\本站点\kv_node_locationy
+[BINDLIST2]
+BINDNAME = kv_bind_sensordata
+COLUMN1 = id \\本站点\kv_sensordata_id
+COLUMN2 = type \\本站点\kv_sensordata_type
+COLUMN3 = nodeid \\本站点\kv_sensordata_nodeid
+COLUMN4 = value \\本站点\kv_sensordata_value
+[BINDLIST3]
+BINDNAME = kv_tabletemplatebind_node
+COLUMN1 = tid \\本站点\tid
+[BINDLIST4]
+BINDNAME = kv_bind_view_node1
+COLUMN1 = type kv_view_node1_type
+COLUMN2 = id kv_view_node1_id
+COLUMN3 = value kv_view_node1_value

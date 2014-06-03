@@ -1,0 +1,133 @@
+<!-- saved from url=(0022)http://internet.e-mail -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=GB2312">
+<title>manage_1_0</title>
+</head>
+<SCRIPT LANGUAGE=javascript>
+var strUserName = "";
+try
+{
+	var fso = new ActiveXObject("Scripting.FileSystemObject");
+	var tmpFolder = fso.GetSpecialFolder(2);
+
+	var ForReading = 1;
+
+	if (fso.FileExists(tmpFolder + "\\kvuser.idx"))
+	{
+		var ts = fso.OpenTextFile(tmpFolder + "\\kvuser.idx", ForReading);
+
+		if (false == ts.AtEndOfLine)
+		{
+			strUserName = ts.ReadLine();
+		}
+		ts.Close();
+	}
+	fso = null;
+}
+catch(e)
+{
+}
+
+if (strUserName== null || strUserName.length < 1)
+{
+	var s = window.location.toString();
+	var posEnd = s.indexOf("/", 11);
+	var strUrl = s.substring(0, posEnd) + "/KvUser.ini";
+
+	try
+	{
+		var xmlHTTP=new ActiveXObject("Microsoft.XMLHTTP"); 
+		xmlHTTP.open("GET",strUrl, false); 
+		xmlHTTP.send(); 
+		strUrl = xmlHTTP.responseText;
+
+		xmlHTTP.open("GET",strUrl, false); 
+		xmlHTTP.send();
+		strUserName = xmlHTTP.responseText;
+		xmlHTTP = null;
+	}
+	catch(e) 
+	{ 		
+	} 
+}
+</SCRIPT>
+<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr>
+    <td align="center"><p></td>
+</tr>
+<tr>
+    <td align="center">
+    <script language=javascript>
+    if (strUserName== null || strUserName.length < 1)
+    {
+    	document.write("\
+	    <object classid = \"clsid:8AD9C840-044E-11D1-B3E9-00805F499D93\" \
+			width 	= 933 \
+			height 	= 755 \
+			name 	= ntkvApp \
+			align 	= middle \
+			codebase= /lib/jre-6u1-windows-i586-p-s.exe#Version=1,6,0> \
+	        <param name = CODE 		value	= com.ac.ntkv.st.NtKvApp.class	> \
+	        <param name = CODEBASE 		value	= . 							> \
+	        <param name = ARCHIVE 		value	= /lib/ntkv.jar 				> \
+	        <param name = NAME 		value 	= ntkvApp						> \
+	        <param name = TYPE 		value 	= application/x-java-applet;version=1.3> \
+	        <param name = SCRIPTABLE 	value 	= FALSE							> \
+	        <param name = ResPath		value 	= /images						> \
+	        <param name = ShowMenu 		value 	= FALSE						> \
+	        <param name = ShowStatus 	value 	= FALSE					> \
+	        <param name = NtGrpName 	value 	= management					> \
+	        <param name = ForeColor 	value 	= #141414					> \
+	        <param name = BackColor 	value 	= #FFFFFF					> \
+	        <param name = MenuFgColor 	value 	= #000000						> \
+	        <param name = MenuBkColor 	value 	= #C0C0C0						> \
+	        <param name = StatusFgColor 	value 	= #000000						> \
+	        <param name = StatusBkColor 	value 	= #C0C0C0						> \
+	        <param name = Fresh 		value 	= 100						> \
+	      </object> \
+	      ");
+	}
+	else
+	{
+    	document.write("\
+	    <object classid = \"clsid:8AD9C840-044E-11D1-B3E9-00805F499D93\" \
+			width 	= 933 \
+			height 	= 755 \
+			name 	= ntkvApp \
+			align 	= middle \
+			codebase= /lib/j2re-1_4_2-windows-i586.exe#Version=1,4,2,0> \
+	        <param name = CODE 		value	= com.ac.ntkv.st.NtKvApp.class	> \
+	        <param name = CODEBASE 		value	= . 							> \
+	        <param name = ARCHIVE 		value	= /lib/ntkv.jar 				> \
+	        <param name = NAME 		value 	= ntkvApp						> \
+	        <param name = TYPE 		value 	= application/x-java-applet;version=1.3> \
+	        <param name = SCRIPTABLE 	value 	= FALSE							> \
+	        <param name = ResPath		value 	= /images						> \
+	        <param name = ShowMenu 		value 	= FALSE						> \
+	        <param name = ShowStatus 	value 	= FALSE					> \
+	        <param name = NtGrpName 	value 	= management					> \
+	        <param name = ForeColor 	value 	= #141414					> \
+	        <param name = BackColor 	value 	= #FFFFFF					> \
+	        <param name = MenuFgColor 	value 	= #000000						> \
+	        <param name = MenuBkColor 	value 	= #C0C0C0						> \
+	        <param name = StatusFgColor 	value 	= #000000						> \
+	        <param name = StatusBkColor 	value 	= #C0C0C0						> \
+	        <param name = Fresh 		value 	= 100						> \
+	        <param name = UserName 		value 	= \"" + strUserName + "\"						> \
+	      </object> \
+	      ");
+	}
+	</script>
+	</td>
+</tr>
+<tr>
+<td></td>
+</tr>
+<tr>
+<td></td>
+</tr>
+</table>
+</body>
+</html>

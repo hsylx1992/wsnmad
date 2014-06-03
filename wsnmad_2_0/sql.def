@@ -1,0 +1,9 @@
+[TABLE1]
+TABLENAME = kv_tabletemplate_node
+COLUMN1 = tid 1 1 2 1
+[TABLE2]
+TABLENAME = kv_tabletemplate_sensordata
+COLUMN1 = id 1 1 2 0
+COLUMN2 = type 1 1 2 0
+COLUMN3 = node_id 1 1 2 0
+COLUMN4 = value 2 1 2 0
